@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <div class="register_logo">
+            <a href="/">Login menu</a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href={% url 'form' %}><u>Sign up</u></a></li>
+                <li><a href={% url 'register' %}><u>Sign in</u></a></li>
+                <li><a href={% url 'login' %}><u>Sign out</u></a></li>
+            </ul>
+        </div>
+    </nav>
+{% if user.is_authenticated %}
+    <p> Login successful!</p>
+{% else %}
+    <p> Sign Out!</p>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <input placeholder="name" name="name">
+    <input placeholder="email" name="email">
+    <button type="submit"> Add</button>
+</form>
+
+<a href="{% url 'logout' %}">
+    <button>
+        Logout
+    </button>
+</a>
+</body>
+</html>

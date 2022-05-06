@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <div class="register_logo">
+            <a href="/">Login menu</a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href={% url 'form' %}><u>Sign up</u></a></li>
+                <li><a href={% url 'register' %}><u>Sign in</u></a></li>
+                <li><a href={% url 'login' %}><u>Sign out</u></a></li>
+            </ul>
+        </div>
+    </nav>
+<form method="POST">
+    {% csrf_token %}
+    <input name="username" placeholder="username">
+    <input name="password" placeholder="password">
+    <button type="submit">
+        Login
+    </button>
+</form>
+</body>
+</html>
+© 2022 GitHub, Inc.
