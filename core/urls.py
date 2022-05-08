@@ -1,7 +1,7 @@
 
 from django.contrib.auth.views import LoginView
 from django.urls import path
-from core.views import index, register, logout, form
+from core.views import index, register, logout, form, mainpage
 
 urlpatterns = [
     # 1-путь,2-функция,3-кр.название
@@ -9,5 +9,6 @@ urlpatterns = [
     path('form/', form, name='form'),
     path('register/', register, name='register'),
     path('login/', LoginView.as_view(), name='login'),
-    path('logout/', logout, name='logout')
+    path('logout/', logout, name='logout'),
+    path('mainpage/', mainpage, name='mp')
 ]

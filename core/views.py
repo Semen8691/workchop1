@@ -10,7 +10,15 @@ def index(reguest):
      Это функция отрисовки гл.страницы
 
     '''
-    return render(reguest, 'index.html')
+    return render(reguest, 'sofiindex.html')
+
+def mainpage(reguest):
+    '''
+
+     Это функция отрисовки 2 страницы
+
+    '''
+    return render(reguest, 'mp.html')
 
 
 def form(request):

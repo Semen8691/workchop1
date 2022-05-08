@@ -19,10 +19,12 @@
         </div>
         <nav>
             <ul class="nav">
-                <li><a href="">home</a></li>
-                <li><a href="">courses</a></li>
+                <li><a href={% url 'index' %}> home</a></li>
+                <li><a href={% url 'mp' %}>courses</a></li>
                 <li>
+                    <a href={% url 'form' %}>
                     <button class="nav_btn" type="button">contact</button>
+                    </a>
                 </li>
             </ul>
         </nav>
